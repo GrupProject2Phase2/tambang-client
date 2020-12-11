@@ -1,22 +1,37 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
-import VueSocketIO from 'vue-socket.io'
-Vue.use(new VueSocketIO({
-  debug: true,
-  connection: 'http://localhost:3000/',
-  vuex: {
-    // store,
-    // actionPrefix: 'SOCKET_',
-    // mutationPrefix: 'SOCKET_'
-  }
-  // options: { path: "/my-app/" } //Optional options
-}))
-Vue.config.productionTip = false
+import Vue from "vue";
+import App from "./App.vue";
+import router from "./router";
+import Vuex from "vuex";
+import VueSocketIO from "vue-socket.io";
+
+Vue.use(Vuex);
+import counterModule from "@/modules/counter";
+import chatModule from "@/modules/chat";
+
+const store = new Vuex.Store({
+  state: {
+    io: {},
+  },
+  mutations: {
+    setSocket: (state, socket) => {
+      state.io = socket;
+      console.log("socket Connected");
+    },
+  },
+  modules: {
+    counterModule,
+    chatModule,
+  },
+});
+
+Vue.use(VueSocketIO, "http://localhost:5000/", store);
 
 new Vue({
-  router,
+  el: "#app",
   store,
-  render: h => h(App)
-}).$mount('#app')
+  router,
+  beforeCreate() {
+    store.commit("setSocket", this.$socket);
+  },
+  render: (h) => h(App),
+});
