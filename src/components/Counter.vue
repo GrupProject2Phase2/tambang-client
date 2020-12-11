@@ -10,7 +10,7 @@
             class="btn btn-block btn-info"
             @click="increment"
           >
-            Pull Right Side
+            Team A Pull Right Side
           </button>
 
           <h4 class="text-center">{{ count }}</h4>
@@ -20,7 +20,7 @@
             class="btn btn-block btn-info"
             @click="decrement"
           >
-            Pull Left Side
+            Team B Pull Left Side
           </button>
         </div>
       </div>

@@ -1,6 +1,8 @@
+import router from "../router";
+
 const counterModule = {
   state: {
-    count: 0,
+    count: 50,
   },
 
   mutations: {
@@ -21,7 +23,13 @@ const counterModule = {
     },
   },
   getters: {
-    count(state) {
+    count(state) { 
+      if (state.count === 100){
+        router.push('/winnerInc')
+      }
+      else if (state.count === 0){
+        router.push('/winnerDec')
+      }
       return state.count;
     },
   },
