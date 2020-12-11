@@ -24,7 +24,7 @@ const store = new Vuex.Store({
   },
 });
 
-Vue.use(VueSocketIO, "http://localhost:3000/", store);
+Vue.use(VueSocketIO, "https://mighty-dawn-44048.herokuapp.com/", store);
 
 new Vue({
   el: "#app",
