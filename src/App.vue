@@ -12,7 +12,7 @@
     </header>
     <div class="container">
       <img
-        src="./assets/happy-cute-kid-boy-girl-play-tug-o-war_97632-1415.jpg"
+        src="https://i.imgur.com/b6nEXib.jpg"
         class="logo"
       />
       <main>

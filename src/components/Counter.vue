@@ -9,6 +9,7 @@
             type="button"
             class="btn btn-block btn-info"
             @click="increment"
+            @click.prevent="playSound('http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3')"
           >
             Team A Pull Right Side
           </button>
@@ -19,6 +20,7 @@
             type="button"
             class="btn btn-block btn-info"
             @click="decrement"
+            @click.prevent="playSound('http://soundbible.com/mp3/Elevator Ding-SoundBible.com-685385892.mp3')"
           >
             Team B Pull Left Side
           </button>
@@ -40,6 +42,12 @@ export default {
     decrement() {
       this.$store.dispatch("socket_decrement");
     },
+    playSound (sound) {
+      if(sound) {
+        var audio = new Audio(sound);
+        audio.play();
+      }
+    }
   },
   computed: {
     ...mapGetters(["count"]),
