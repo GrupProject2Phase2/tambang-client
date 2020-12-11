@@ -8,7 +8,6 @@
           <button
             type="button"
             class="btn btn-block btn-info"
-            :disabled="isDisabledRight"
             @click="increment"
           >
             Pull Right Side
@@ -19,7 +18,6 @@
           <button
             type="button"
             class="btn btn-block btn-info"
-            :disabled="isDisabledLeft"
             @click="decrement"
           >
             Pull Left Side
