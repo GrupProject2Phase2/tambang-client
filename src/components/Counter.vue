@@ -46,18 +46,18 @@ export default {
   computed: {
     ...mapGetters(["count"]),
     isDisabledLeft() {
-      if (1 == 1) {
-        return false;
-      } else {
-        return true;
-      }
+      // if (1 == 1) {
+      //   return false;
+      // } else {
+      //   return true;
+      // }
     },
     isDisabledRight() {
-      if (1 == 1) {
-        return true;
-      } else {
-        return false;
-      }
+      // if (1 == 1) {
+      //   return true;
+      // } else {
+      //   return false;
+      // }
     },
   },
 };

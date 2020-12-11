@@ -24,7 +24,7 @@ const store = new Vuex.Store({
   },
 });
 
-Vue.use(VueSocketIO, "http://localhost:5000/", store);
+Vue.use(VueSocketIO, "http://localhost:3000/", store);
 
 new Vue({
   el: "#app",
