@@ -5,8 +5,8 @@ import Vuex from "vuex";
 import VueSocketIO from "vue-socket.io";
 
 Vue.use(Vuex);
-import counterModule from "@/modules/counter";
-import chatModule from "@/modules/chat";
+import counterModule from "@/store/counter";
+import chatModule from "@/store/chat";
 
 const store = new Vuex.Store({
   state: {
