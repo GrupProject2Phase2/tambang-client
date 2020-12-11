@@ -2,7 +2,8 @@ import Vue from "vue";
 import Router from "vue-router";
 import Counter from "@/components/Counter";
 import Chat from "@/components/Chat";
-import Winner from "@/components/Winner"
+import WinnerDec from "@/components/WinnerDec"
+import WinnerInc from "@/components/WinnerInc"
 
 Vue.use(Router);
 
@@ -19,9 +20,14 @@ export default new Router({
       component: Chat,
     },
     {
-      path: "/winner",
-      name: "winner",
-      component: Winner
+      path: "/winnerDec",
+      name: "winnerDec",
+      component: WinnerDec
+    },
+    {
+      path: "/winnerInc",
+      name: "winnerInc",
+      component: WinnerInc
     }
   ],
 });
